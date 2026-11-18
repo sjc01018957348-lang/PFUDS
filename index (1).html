@@ -1,0 +1,731 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مكتب شيماء عبد العظيم للمحاماة والاستشارات القانونية</title>
+
+<style>
+:root{
+ --gold:#c9a45c;
+ --dark:#10141d;
+ --navy:#171e2b;
+ --white:#fff;
+ --muted:#aab0bb;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+ font-family:Tahoma,Arial,sans-serif;
+ background:#10141d;color:#fff;
+ line-height:1.8;
+}
+html{scroll-behavior:smooth}
+a{text-decoration:none;color:inherit}
+button,input,textarea,select{font-family:inherit}
+button{cursor:pointer}
+.container{width:90%;max-width:1200px;margin:auto}
+header{
+ background:#10141d;
+ border-bottom:1px solid #3c3529;
+ position:sticky;top:0;z-index:1000;
+}
+.nav{
+ display:flex;align-items:center;
+ justify-content:space-between;
+ padding:15px 0;gap:15px;
+}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{font-size:38px;color:var(--gold)}
+.logo h2{font-size:17px;color:var(--gold)}
+.logo small{color:#ddd;font-size:11px}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{font-size:13px;color:#eee}
+nav a:hover{color:var(--gold)}
+.menu{display:none;background:none;color:white;border:0;font-size:25px}
+.hero{
+ min-height:570px;
+ display:flex;align-items:center;
+ text-align:center;
+ background:
+ linear-gradient(#10141de8,#10141df0),
+ radial-gradient(circle at center,#80602c,#10141d);
+ padding:85px 15px;
+}
+.hero-content{max-width:850px;margin:auto}
+.hero-icon{font-size:85px;color:var(--gold)}
+.hero h1{font-size:37px;color:var(--gold);margin:15px 0}
+.hero p{color:#ddd;font-size:17px;margin-bottom:25px}
+.btn{
+ display:inline-block;padding:12px 24px;
+ border-radius:7px;border:0;
+ background:var(--gold);color:#151515;
+ font-weight:bold;margin:5px;
+}
+.btn:hover{opacity:.85;transform:translateY(-2px)}
+.btn-outline{
+ background:transparent;color:var(--gold);
+ border:1px solid var(--gold)
+}
+section{padding:75px 0}
+.section-title{text-align:center;margin-bottom:40px}
+.section-title h2{font-size:29px;color:var(--gold)}
+.section-title p{color:var(--muted);font-size:14px}
+.about{
+ background:#171e2b;
+ text-align:center;
+}
+.about-text{max-width:850px;margin:auto;color:#ddd}
+.stats{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:15px;margin-top:30px
+}
+.stat{
+ background:#202b3a;padding:22px;
+ border:1px solid #4b402e;border-radius:10px
+}
+.stat strong{display:block;color:var(--gold);font-size:24px}
+.services-grid{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:20px;
+}
+.service{
+ background:#1a2230;
+ border:1px solid #333;
+ border-radius:12px;padding:24px;
+ transition:.3s;
+ border-top:4px solid var(--color);
+}
+.service:hover{transform:translateY(-7px)}
+.service-icon{font-size:35px;color:var(--color)}
+.service h3{color:var(--color);margin:10px 0}
+.service p{font-size:13px;color:#ddd}
+.service ul{padding-right:20px;color:#bbb;font-size:13px;margin:12px 0}
+.service button{
+ border:1px solid var(--color);
+ background:transparent;color:var(--color);
+ padding:8px 15px;border-radius:5px;margin-top:12px
+}
+.docs{background:#171e2b}
+.docs-grid{
+ display:grid;grid-template-columns:repeat(2,1fr);gap:15px
+}
+.doc{
+ background:#202b3a;padding:20px;
+ border-right:4px solid var(--gold);
+ border-radius:8px
+}
+.doc h3{color:var(--gold);margin-bottom:10px}
+.doc ul{padding-right:20px;color:#ddd;font-size:13px}
+.booking-area{
+ display:grid;grid-template-columns:1fr 1fr;gap:25px
+}
+.panel{
+ background:#1a2230;padding:25px;
+ border:1px solid #3d3d3d;border-radius:12px
+}
+.panel h3{color:var(--gold);margin-bottom:18px}
+input,select,textarea{
+ width:100%;padding:12px;margin-bottom:13px;
+ border:1px solid #454d5b;border-radius:6px;
+ background:#111925;color:white;outline:none
+}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+textarea{min-height:100px;resize:vertical}
+label{display:block;font-size:13px;margin-bottom:5px;color:#ddd}
+.news-grid{
+ display:grid;grid-template-columns:repeat(3,1fr);gap:15px
+}
+.news-card{
+ background:#202b3a;padding:20px;
+ border-radius:9px;border-bottom:3px solid var(--gold)
+}
+.news-card h3{color:var(--gold);font-size:17px}
+.news-card p{font-size:13px;color:#ddd;margin:10px 0}
+.news-card small{color:#999}
+.announcement{
+ padding:15px;background:#292416;
+ border-right:4px solid var(--gold);
+ margin:12px 0;border-radius:6px
+}
+.announcement h3{color:var(--gold)}
+footer{
+ background:#080b10;padding:40px 0;text-align:center;
+ border-top:1px solid #544329
+}
+footer h2{color:var(--gold)}
+footer p{color:#aaa;font-size:13px;margin:8px}
+.social{
+ position:fixed;bottom:20px;left:15px;
+ display:flex;flex-direction:column;gap:10px;z-index:100
+}
+.social a{
+ padding:11px 16px;border-radius:30px;
+ color:white;font-size:13px;font-weight:bold;
+ box-shadow:0 3px 12px #0008
+}
+.whatsapp{background:#168b4c}
+.phone{background:#a57c32}
+.admin-toggle{
+ position:fixed;bottom:20px;right:15px;
+ background:#252d3b;color:var(--gold);
+ border:1px solid var(--gold);padding:12px;
+ border-radius:8px;z-index:200
+}
+#admin{
+ display:none;background:#171e2b;
+ border:1px solid var(--gold);
+ padding:30px;margin:30px auto;
+ border-radius:12px;
+}
+.admin-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.admin-box{
+ background:#222d3c;padding:20px;border-radius:8px
+}
+.admin-box h3{color:var(--gold);margin-bottom:12px}
+.admin-list{margin-top:15px}
+.admin-item{
+ padding:12px;background:#111925;
+ margin:8px 0;border-radius:6px;
+ font-size:13px;overflow-wrap:anywhere
+}
+.delete{
+ background:#a83232;color:white;border:0;
+ padding:5px 10px;border-radius:4px;margin:5px
+}
+.edit{
+ background:#987333;color:white;border:0;
+ padding:5px 10px;border-radius:4px;margin:5px
+}
+.notice{color:#d5bd8c;font-size:12px;margin-top:10px}
+.empty{text-align:center;color:#aaa;padding:15px}
+@media(max-width:850px){
+ .services-grid,.news-grid{grid-template-columns:repeat(2,1fr)}
+ nav{display:none;position:absolute;top:70px;right:0;
+ background:#171e2b;width:100%;padding:20px}
+ nav.open{display:flex;flex-direction:column}
+ .menu{display:block}
+}
+@media(max-width:600px){
+ .hero h1{font-size:25px}
+ .services-grid,.news-grid,.docs-grid,
+ .booking-area,.admin-grid{grid-template-columns:1fr}
+ .stats{grid-template-columns:1fr}
+ .logo h2{font-size:13px}
+ section{padding:50px 0}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="container nav">
+  <div class="logo">
+   <span class="logo-icon">⚖</span>
+   <div>
+    <h2>مكتب شيماء عبد العظيم</h2>
+    <small>للمحاماة والاستشارات القانونية</small>
+   </div>
+  </div>
+  <button class="menu" onclick="toggleMenu()">☰</button>
+  <nav id="nav">
+   <a href="#home">الرئيسية</a>
+   <a href="#about">عن المكتب</a>
+   <a href="#services">التخصصات</a>
+   <a href="#documents">المستندات</a>
+   <a href="#booking">حجز استشارة</a>
+   <a href="#news">الأخبار</a>
+   <a href="#contact">اتصل بنا</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="hero-content">
+  <div class="hero-icon">⚖</div>
+  <h1>مكتب شيماء عبد العظيم</h1>
+  <h2>للمحاماة والاستشارات القانونية</h2>
+  <p>
+   نقدم خدمات قانونية واستشارات متخصصة في مختلف فروع القانون،
+   مع الاهتمام بدراسة كل قضية وتوضيح الإجراءات القانونية المناسبة.
+  </p>
+  <a href="#services" class="btn">اكتشف خدماتنا</a>
+  <a href="#booking" class="btn btn-outline">احجز استشارتك</a>
+ </div>
+</section>
+
+<section class="about" id="about">
+ <div class="container">
+  <div class="section-title"><h2>عن المكتب</h2></div>
+  <div class="about-text">
+   <p>
+    مكتب شيماء عبد العظيم للمحاماة والاستشارات القانونية،
+    مقره طما بمحافظة سوهاج.
+    نسعى إلى تقديم الخدمات القانونية بمهنية ووضوح،
+    ودراسة احتياجات كل عميل وتوضيح الخيارات والإجراءات المتاحة
+    وفقاً للقانون.
+   </p>
+  </div>
+  <div class="stats">
+   <div class="stat"><strong>7</strong>تخصصات قانونية</div>
+   <div class="stat"><strong>طما</strong>مقر المكتب</div>
+   <div class="stat"><strong>7 أيام</strong>استقبال الاستفسارات</div>
+  </div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="container">
+  <div class="section-title">
+   <h2>التخصصات القانونية</h2>
+   <p>كل تخصص له قسم مستقل وخدمات خاصة به</p>
+  </div>
+  <div class="services-grid" id="servicesGrid"></div>
+ </div>
+</section>
+
+<section class="docs" id="documents">
+ <div class="container">
+  <div class="section-title">
+   <h2>المستندات المطلوبة</h2>
+   <p>قائمة استرشادية، وقد تختلف المستندات حسب ظروف كل قضية</p>
+  </div>
+  <div class="docs-grid" id="docsGrid"></div>
+ </div>
+</section>
+
+<section id="booking">
+ <div class="container">
+  <div class="section-title">
+   <h2>حجز الاستشارات والمواعيد</h2>
+   <p>املأ البيانات وسيتم فتح واتساب لإرسال طلبك للمكتب</p>
+  </div>
+  <div class="booking-area">
+   <div class="panel">
+    <h3>احجز موعدك</h3>
+    <form id="bookingForm">
+     <label>الاسم بالكامل</label>
+     <input id="bname" required placeholder="اكتب اسمك">
+     <label>رقم الهاتف</label>
+     <input id="bphone" required type="tel" placeholder="رقم الهاتف">
+     <label>نوع القضية</label>
+     <select id="bservice" required></select>
+     <label>تاريخ الموعد المطلوب</label>
+     <input id="bdate" type="date" required>
+     <label>الساعة المقترحة</label>
+     <input id="btime" type="time" required>
+     <label>تفاصيل مختصرة عن الطلب</label>
+     <textarea id="bdetails" placeholder="اكتب تفاصيل الاستشارة باختصار"></textarea>
+     <button class="btn" type="submit">إرسال طلب الحجز عبر واتساب</button>
+    </form>
+    <p class="notice">الموعد المقترح لا يعتبر مؤكداً إلا بعد تأكيد المكتب.</p>
+   </div>
+
+   <div class="panel">
+    <h3>طلب استشارة قانونية</h3>
+    <form id="consultForm">
+     <label>اسم العميل</label>
+     <input id="cname" required placeholder="الاسم">
+     <label>رقم الهاتف</label>
+     <input id="cphone" required type="tel" placeholder="رقم الهاتف">
+     <label>التخصص المطلوب</label>
+     <select id="cservice" required></select>
+     <label>موضوع الاستشارة</label>
+     <textarea id="cmessage" required placeholder="اشرح استفسارك"></textarea>
+     <button class="btn" type="submit">إرسال الاستشارة عبر واتساب</button>
+    </form>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="achievements" class="about">
+ <div class="container">
+  <div class="section-title"><h2>إنجازات وخبرات المكتب</h2></div>
+  <div class="about-text">
+   <p>
+    يهتم المكتب بمتابعة المستجدات القانونية،
+    ودراسة الملفات بعناية، وتنظيم المستندات،
+    وتوضيح الإجراءات القانونية للعملاء.
+   </p>
+   <p>يتم عرض الإنجازات الفعلية للمكتب بعد إضافتها من الإدارة.</p>
+  </div>
+ </div>
+</section>
+
+<section id="announcements">
+ <div class="container">
+  <div class="section-title"><h2>الإعلانات والتنبيهات</h2></div>
+  <div id="announcementList"></div>
+ </div>
+</section>
+
+<section id="news" class="about">
+ <div class="container">
+  <div class="section-title">
+   <h2>أخبار وتحديثات المكتب</h2>
+  </div>
+  <div class="news-grid" id="newsGrid"></div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="container">
+  <div class="section-title"><h2>تواصل معنا</h2></div>
+  <div class="panel" style="text-align:center">
+   <div class="hero-icon" style="font-size:55px">⚖</div>
+   <h2 style="color:var(--gold)">مكتب شيماء عبد العظيم</h2>
+   <p>للمحاماة والاستشارات القانونية</p>
+   <p>العنوان: طما – محافظة سوهاج – مصر</p>
+   <p>رقم الهاتف: 01012056210</p>
+   <p>مواعيد استقبال الاستفسارات: طوال أيام الأسبوع</p>
+   <a class="btn" href="tel:01012056210">اتصل بالمكتب</a>
+   <a class="btn" href="https://wa.me/201012056210" target="_blank">واتساب</a>
+  </div>
+ </div>
+</section>
+
+</main>
+
+<footer>
+ <h2>⚖ مكتب شيماء عبد العظيم</h2>
+ <p>للمحاماة والاستشارات القانونية</p>
+ <p>طما – محافظة سوهاج</p>
+ <p>جميع الحقوق محفوظة © <span id="year"></span></p>
+</footer>
+
+<div class="social">
+ <a class="whatsapp" href="https://wa.me/201012056210" target="_blank">واتساب</a>
+ <a class="phone" href="tel:01012056210">اتصال مباشر</a>
+</div>
+
+<button class="admin-toggle" onclick="toggleAdmin()">⚙ لوحة الإدارة</button>
+
+<section id="admin" class="container">
+ <div class="section-title">
+  <h2>لوحة إدارة المكتب</h2>
+  <p>إدارة الخدمات والإعلانات والأخبار وطلبات العملاء</p>
+ </div>
+
+ <div class="stats">
+  <div class="stat"><strong id="countNews">0</strong>الأخبار</div>
+  <div class="stat"><strong id="countAds">0</strong>الإعلانات</div>
+  <div class="stat"><strong id="countBookings">0</strong>طلبات الحجز المسجلة</div>
+ </div>
+
+ <div class="admin-grid" style="margin-top:25px">
+  <div class="admin-box">
+   <h3>إضافة إعلان جديد</h3>
+   <input id="adTitle" placeholder="عنوان الإعلان">
+   <textarea id="adText" placeholder="تفاصيل الإعلان"></textarea>
+   <button class="btn" onclick="addAnnouncement()">نشر الإعلان</button>
+   <div class="admin-list" id="adminAds"></div>
+  </div>
+
+  <div class="admin-box">
+   <h3>إضافة خبر جديد</h3>
+   <input id="newsTitle" placeholder="عنوان الخبر">
+   <textarea id="newsText" placeholder="محتوى الخبر"></textarea>
+   <button class="btn" onclick="addNews()">نشر الخبر</button>
+   <div class="admin-list" id="adminNews"></div>
+  </div>
+
+  <div class="admin-box">
+   <h3>إدارة التخصصات</h3>
+   <input id="serviceTitle" placeholder="اسم التخصص">
+   <textarea id="serviceDesc" placeholder="وصف الخدمة"></textarea>
+   <button class="btn" onclick="addService()">إضافة تخصص</button>
+   <div class="admin-list" id="adminServices"></div>
+  </div>
+
+  <div class="admin-box">
+   <h3>طلبات الحجز المسجلة</h3>
+   <div class="admin-list" id="adminBookings"></div>
+   <button class="btn" onclick="clearBookings()">مسح الطلبات المحلية</button>
+  </div>
+ </div>
+ <p class="notice">
+  تنبيه: لوحة الإدارة في هذه النسخة تجريبية ولا تحتوي على تسجيل دخول.
+  البيانات تحفظ في المتصفح الحالي فقط، وليست قاعدة بيانات مشتركة.
+ </p>
+</section>
+
+<script>
+const PHONE = "201012056210";
+
+const defaultServices = [
+ {
+  id:1,name:"القضايا الجنائية",icon:"⚖",color:"#c58c46",
+  desc:"خدمات قانونية في مجال القضايا الجنائية، ودراسة الملفات ومتابعة الإجراءات وفقاً للقانون.",
+  items:["القضايا الجنائية","الدفاع القانوني","متابعة الإجراءات"]
+ },
+ {
+  id:2,name:"قضايا الطلاق والخلع",icon:"⚖",color:"#d85b77",
+  desc:"استشارات قانونية في مسائل الطلاق والخلع والإجراءات المتعلقة بالأحوال الشخصية.",
+  items:["الطلاق","الخلع","إجراءات الأحوال الشخصية"]
+ },
+ {
+  id:3,name:"قضايا النفقة والحضانة",icon:"👨‍👩‍👧",color:"#36a5a0",
+  desc:"تقديم الاستشارات القانونية في قضايا النفقة والحضانة والرؤية وغيرها من مسائل الأسرة.",
+  items:["النفقة","الحضانة","الرؤية"]
+ },
+ {
+  id:4,name:"الأراضي والعقارات",icon:"🏛",color:"#69ad72",
+  desc:"دراسة المستندات والتعامل مع المنازعات المتعلقة بالأراضي والعقارات والملكية.",
+  items:["منازعات الملكية","العقود العقارية","فحص المستندات"]
+ },
+ {
+  id:5,name:"تأسيس الشركات والعقود",icon:"📜",color:"#9b83d5",
+  desc:"استشارات قانونية متعلقة بالشركات والعقود والاتفاقيات والمعاملات التجارية.",
+  items:["عقود الشركات","الاتفاقيات","الاستشارات التجارية"]
+ },
+ {
+  id:6,name:"القضايا المدنية",icon:"⚖",color:"#579ad8",
+  desc:"دراسة المنازعات المدنية والحقوق والالتزامات والتعويضات وفقاً للقانون.",
+  items:["المطالبات المدنية","التعويضات","المنازعات"]
+ },
+ {
+  id:7,name:"القضايا التجارية",icon:"💼",color:"#d6a64d",
+  desc:"استشارات قانونية في المنازعات التجارية والعقود والمعاملات.",
+  items:["المنازعات التجارية","العقود","المعاملات التجارية"]
+ }
+];
+
+function getData(key, fallback){
+ try{
+  const value=localStorage.getItem(key);
+  return value ? JSON.parse(value) : fallback;
+ }catch(e){return fallback}
+}
+function saveData(key,data){
+ localStorage.setItem(key,JSON.stringify(data));
+}
+
+let services=getData("law_services",defaultServices);
+let announcements=getData("law_ads",[]);
+let news=getData("law_news",[]);
+let bookings=getData("law_bookings",[]);
+
+function safe(value){
+ return String(value).replace(/[&<>"']/g,c=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+ }[c]));
+}
+
+function renderServices(){
+ const grid=document.getElementById("servicesGrid");
+ grid.innerHTML=services.map(s=>`
+  <article class="service" style="--color:${safe(s.color||'#c9a45c')}">
+   <div class="service-icon">${safe(s.icon||'⚖')}</div>
+   <h3>${safe(s.name)}</h3>
+   <p>${safe(s.desc)}</p>
+   <ul>${(s.items||[]).map(i=>`<li>${safe(i)}</li>`).join("")}</ul>
+   <button onclick="chooseService(${Number(s.id)})">اطلب استشارة</button>
+  </article>
+ `).join("");
+
+ ["bservice","cservice"].forEach(id=>{
+  const el=document.getElementById(id);
+  el.innerHTML='<option value="">اختر التخصص</option>'+
+  services.map(s=>`<option>${safe(s.name)}</option>`).join("");
+ });
+ renderAdmin();
+}
+
+function renderDocuments(){
+ const documents=[
+ ["القضايا الجنائية",["بطاقة الرقم القومي","المستندات المتعلقة بالواقعة إن وجدت","أي أوراق أو قرارات رسمية متاحة"]],
+ ["الطلاق والخلع",["بطاقة الرقم القومي","وثيقة الزواج إن وجدت","المستندات المتعلقة بالموضوع"]],
+ ["النفقة والحضانة",["بطاقة الرقم القومي","شهادات ميلاد الأطفال عند الحاجة","المستندات المتعلقة بالطلب"]],
+ ["الأراضي والعقارات",["عقود الملكية المتاحة","المستندات المساحية إن وجدت","إيصالات أو مستندات ذات صلة"]],
+ ["الشركات والعقود",["بطاقات الأطراف المعنية","بيانات الشركة إن وجدت","مسودة العقد أو الاتفاق"]],
+ ["القضايا المدنية",["بطاقة الرقم القومي","العقود والمستندات المتعلقة بالنزاع","أي أحكام أو مراسلات ذات صلة"]],
+ ["القضايا التجارية",["المستندات التجارية المتاحة","العقود والفواتير","المراسلات المتعلقة بالنزاع"]]
+ ];
+ document.getElementById("docsGrid").innerHTML=documents.map(d=>`
+ <div class="doc">
+ <h3>${safe(d[0])}</h3>
+ <ul>${d[1].map(x=>`<li>${safe(x)}</li>`).join("")}</ul>
+ </div>`).join("");
+}
+
+function sendWhatsApp(message){
+ window.open("https://wa.me/"+PHONE+"?text="+encodeURIComponent(message),"_blank");
+}
+
+function chooseService(id){
+ const s=services.find(x=>Number(x.id)===Number(id));
+ if(!s)return;
+ document.getElementById("cservice").value=s.name;
+ document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+}
+
+document.getElementById("bookingForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const data={
+  id:Date.now(),
+  name:document.getElementById("bname").value,
+  phone:document.getElementById("bphone").value,
+  service:document.getElementById("bservice").value,
+  date:document.getElementById("bdate").value,
+  time:document.getElementById("btime").value,
+  details:document.getElementById("bdetails").value
+ };
+ bookings.push(data);
+ saveData("law_bookings",bookings);
+ renderAdmin();
+
+ sendWhatsApp(
+ `طلب حجز موعد جديد\nالاسم: ${data.name}\nالهاتف: ${data.phone}\nالتخصص: ${data.service}\nالتاريخ: ${data.date}\nالساعة: ${data.time}\nالتفاصيل: ${data.details}`
+ );
+ e.target.reset();
+ alert("تم تسجيل الطلب في هذا المتصفح. يرجى إرسال الرسالة عبر واتساب لإتمام التواصل.");
+});
+
+document.getElementById("consultForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const d={
+ name:document.getElementById("cname").value,
+ phone:document.getElementById("cphone").value,
+ service:document.getElementById("cservice").value,
+ message:document.getElementById("cmessage").value
+ };
+ sendWhatsApp(
+ `طلب استشارة قانونية\nالاسم: ${d.name}\nالهاتف: ${d.phone}\nالتخصص: ${d.service}\nالاستفسار: ${d.message}`
+ );
+ e.target.reset();
+});
+
+function addAnnouncement(){
+ const title=document.getElementById("adTitle").value.trim();
+ const text=document.getElementById("adText").value.trim();
+ if(!title||!text)return alert("اكتب عنوان الإعلان وتفاصيله");
+ announcements.unshift({id:Date.now(),title,text,date:new Date().toLocaleDateString("ar-EG")});
+ saveData("law_ads",announcements);
+ document.getElementById("adTitle").value="";
+ document.getElementById("adText").value="";
+ renderAll();
+}
+
+function addNews(){
+ const title=document.getElementById("newsTitle").value.trim();
+ const text=document.getElementById("newsText").value.trim();
+ if(!title||!text)return alert("اكتب عنوان الخبر ومحتواه");
+ news.unshift({id:Date.now(),title,text,date:new Date().toLocaleDateString("ar-EG")});
+ saveData("law_news",news);
+ document.getElementById("newsTitle").value="";
+ document.getElementById("newsText").value="";
+ renderAll();
+}
+
+function addService(){
+ const name=document.getElementById("serviceTitle").value.trim();
+ const desc=document.getElementById("serviceDesc").value.trim();
+ if(!name||!desc)return alert("اكتب اسم التخصص والوصف");
+ services.push({
+  id:Date.now(),name,desc,icon:"⚖",
+  color:"#c9a45c",items:[]
+ });
+ saveData("law_services",services);
+ document.getElementById("serviceTitle").value="";
+ document.getElementById("serviceDesc").value="";
+ renderAll();
+}
+
+function deleteItem(key,id){
+ if(!confirm("هل تريد حذف هذا العنصر؟"))return;
+ if(key==="law_ads")announcements=announcements.filter(x=>x.id!==id);
+ if(key==="law_news")news=news.filter(x=>x.id!==id);
+ if(key==="law_services")services=services.filter(x=>x.id!==id);
+ saveData(key,key==="law_ads"?announcements:key==="law_news"?news:services);
+ renderAll();
+}
+
+function renderAdmin(){
+ document.getElementById("adminAds").innerHTML=announcements.map(x=>`
+ <div class="admin-item">${safe(x.title)}
+ <button class="delete" onclick="deleteItem('law_ads',${x.id})">حذف</button></div>`).join("")||'<p class="empty">لا توجد إعلانات</p>';
+
+ document.getElementById("adminNews").innerHTML=news.map(x=>`
+ <div class="admin-item">${safe(x.title)}
+ <button class="delete" onclick="deleteItem('law_news',${x.id})">حذف</button></div>`).join("")||'<p class="empty">لا توجد أخبار</p>';
+
+ document.getElementById("adminServices").innerHTML=services.map(x=>`
+ <div class="admin-item">${safe(x.name)}
+ <button class="delete" onclick="deleteItem('law_services',${x.id})">حذف</button></div>`).join("");
+
+ document.getElementById("adminBookings").innerHTML=bookings.map(x=>`
+ <div class="admin-item">
+ <b>${safe(x.name)}</b><br>
+ ${safe(x.phone)}<br>
+ ${safe(x.service)}<br>
+ ${safe(x.date)} - ${safe(x.time)}
+ <button class="delete" onclick="deleteBooking(${x.id})">حذف</button>
+ </div>`).join("")||'<p class="empty">لا توجد طلبات محفوظة في هذا المتصفح</p>';
+
+ document.getElementById("countNews").textContent=news.length;
+ document.getElementById("countAds").textContent=announcements.length;
+ document.getElementById("countBookings").textContent=bookings.length;
+}
+
+function deleteBooking(id){
+ if(!confirm("حذف طلب الحجز؟"))return;
+ bookings=bookings.filter(x=>x.id!==id);
+ saveData("law_bookings",bookings);
+ renderAdmin();
+}
+
+function clearBookings(){
+ if(!confirm("هل تريد مسح جميع طلبات الحجز المحلية؟"))return;
+ bookings=[];
+ saveData("law_bookings",bookings);
+ renderAdmin();
+}
+
+function renderPublic(){
+ document.getElementById("announcementList").innerHTML=
+ announcements.map(x=>`
+ <div class="announcement">
+ <h3>${safe(x.title)}</h3>
+ <p>${safe(x.text)}</p>
+ <small>${safe(x.date)}</small>
+ </div>`).join("")||'<p class="empty">لا توجد إعلانات حالياً</p>';
+
+ document.getElementById("newsGrid").innerHTML=
+ news.map(x=>`
+ <article class="news-card">
+ <h3>${safe(x.title)}</h3>
+ <p>${safe(x.text)}</p>
+ <small>${safe(x.date)}</small>
+ </article>`).join("")||'<p class="empty">سيتم نشر الأخبار والتحديثات هنا</p>';
+}
+
+function renderAll(){
+ renderServices();
+ renderDocuments();
+ renderPublic();
+ renderAdmin();
+}
+
+function toggleAdmin(){
+ const a=document.getElementById("admin");
+ a.style.display=a.style.display==="block"?"none":"block";
+ if(a.style.display==="block"){
+  renderAll();
+  a.scrollIntoView({behavior:"smooth"});
+ }
+}
+
+function toggleMenu(){
+ document.getElementById("nav").classList.toggle("open");
+}
+
+document.getElementById("bdate").min=
+ new Date().toISOString().split("T")[0];
+document.getElementById("year").textContent=new Date().getFullYear();
+
+renderAll();
+</script>
+</body>
